@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>The Payments Nook | Flutterwave</title>
+  <!-- Google Fonts matching the serif headline and clean sans-serif UI -->
+  <link rel="preconnect" href="https://googleapis.com">
+  <link rel="preconnect" href="https://gstatic.com" crossorigin>
+  <link href="https://googleapis.com/css2?family=Fraunces:opsz,wght@9..144,800;9..144,900&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --navy-dark: #1d223f;
+      --text-primary: #111827;
+      --text-secondary: #374151;
+      --btn-bg: #eeeeee;
+      --btn-hover: #e2e2e2;
+      --bg-white: #ffffff;
+      --container-max: 1140px;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+      background-color: var(--bg-white);
+      color: var(--text-primary);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      overflow-x: hidden;
+    }
+
+    /* --- Top Announcement Bar --- */
+    .top-banner {
+      background-color: var(--navy-dark);
+      color: #ffffff;
+      font-size: 0.875rem;
+      font-weight: 500;
+      padding: 12px 24px;
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+    }
+
+    .top-banner a {
+      color: #ffffff;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      line-height: 1.4;
+      padding-right: 32px;
+    }
+
+    .top-banner a:hover {
+      text-decoration: underline;
+    }
+
+    .close-banner {
+      position: absolute;
+      right: 40px;
+      background: transparent;
+      border: 1.5px solid rgba(255, 255, 255, 0.85);
+      color: #ffffff;
+      width: 24px;
+      height: 24px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      font-size: 13px;
+      line-height: 1;
+      transition: background 0.2s ease, transform 0.2s ease;
+    }
+
+    .close-banner:hover {
+      background: rgba(255, 255, 255, 0.15);
+    }
+
+    /* --- Main Container --- */
+    .container {
+      width: 100%;
+      max-width: var(--container-max);
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    /* --- Navbar --- */
+    .navbar {
+      padding: 28px 0;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      position: relative;
+    }
+
+    .logo {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      text-decoration: none;
+      color: #1f243b;
+      font-weight: 700;
+      font-size: 1.35rem;
+      letter-spacing: -0.02em;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 32px;
+      list-style: none;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: #262b40;
+      font-size: 0.925rem;
+      font-weight: 500;
+      transition: color 0.2s ease;
+    }
+
+    .nav-links a:hover {
+      color: #f5a623;
+    }
+
+    .nav-actions {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .btn-signin {
+      background-color: var(--btn-bg);
+      color: #1f243b;
+      text-decoration: none;
+      font-size: 0.9rem;
+      font-weight: 500;
+      padding: 13px 42px;
+      border-radius: 10px;
+      transition: background-color 0.2s ease;
+    }
+
+    .btn-signin:hover {
+      background-color: var(--btn-hover);
+    }
+
+    /* Mobile Hamburger Button */
+    .menu-toggle {
+      display: none;
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 6px;
+      color: var(--navy-dark);
+    }
+
+    /* --- Hero Section --- */
+    .hero {
+      padding-top: 84px;
+      padding-bottom: 100px;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .hero-content {
+      max-width: 680px;
+    }
+
+    .hero-title {
+      font-family: 'Fraunces', Georgia, serif;
+      font-weight: 900;
+      font-size: clamp(3rem, 6.5vw, 5.25rem);
+      line-height: 1.04;
+      letter-spacing: -0.025em;
+      color: #0d0d0d;
+      margin-bottom: 28px;
+    }
+
+    .hero-subtitle {
+      font-size: clamp(1.05rem, 1.5vw, 1.25rem);
+      line-height: 1.6;
+      color: #333333;
+      max-width: 610px;
+      font-weight: 400;
+    }
+
+    /* --- Bottom Dark Card Peek (Matching bottom of screenshot) --- */
+    .bottom-peek-wrapper {
+      margin-top: auto;
+    }
+
+    .bottom-peek-card {
+      width: 100%;
+      max-width: 460px;
+      height: 28px;
+      background-color: #0a0c1d;
+      border-top-left-radius: 14px;
+      border-top-right-radius: 14px;
+    }
+
+    /* --- Responsive Breakpoints --- */
+    @media (max-width: 992px) {
+      .nav-links {
+        gap: 20px;
+      }
+
+      .btn-signin {
+        padding: 11px 28px;
+      }
+
+      .close-banner {
+        right: 16px;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .top-banner {
+        font-size: 0.8rem;
+        padding: 10px 44px 10px 16px;
+        text-align: left;
+        justify-content: flex-start;
+      }
+
+      .top-banner a {
+        padding-right: 0;
+      }
+
+      .menu-toggle {
+        display: block;
+      }
+
+      .nav-links {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background: #ffffff;
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 20px 24px;
+        gap: 18px;
+        border-bottom: 1px solid #e5e7eb;
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.06);
+        z-index: 50;
+      }
+
+      .nav-links.active {
+        display: flex;
+      }
+
+      .btn-signin {
+        padding: 10px 20px;
+        font-size: 0.85rem;
+      }
+
+      .hero {
+        padding-top: 48px;
+        padding-bottom: 64px;
+      }
+
+      .hero-title {
+        margin-bottom: 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Top Announcement Banner -->
+  <div class="top-banner" id="topBanner">
+    <a href="#license-news">
+      <span>We've secured our banking license in Nigeria, our largest market 🎉. See what this means for you &rarr;</span>
+    </a>
+    <button class="close-banner" aria-label="Close announcement" onclick="document.getElementById('topBanner').style.display='none'">
+      &#10005;
+    </button>
+  </div>
+
+  <!-- Main Header -->
+  <header class="container">
+    <nav class="navbar">
+      <!-- Flutterwave Brand Logo -->
+      <a href="#" class="logo">
+        <svg width="30" height="26" viewBox="0 0 36 30" fill="none" xmlns="http://w3.org">
+          <path d="M16.4 13.8C13.6 8.2 7.5 2.5 2.4 4.1C-1.2 5.2 0.6 11.4 5.2 14.9C8.8 17.6 13.7 16.5 16.4 13.8Z" fill="#F5A623"/>
+          <path d="M16.1 15.2C11.9 15.6 6.2 18.8 6.8 23.4C7.3 27.1 12.6 26.8 15.5 22.9C17.8 19.9 17.5 16.9 16.1 15.2Z" fill="#00AB6B"/>
+          <path d="M19.6 13.8C22.4 8.2 28.5 2.5 33.6 4.1C37.2 5.2 35.4 11.4 30.8 14.9C27.2 17.6 22.3 16.5 19.6 13.8Z" fill="#EA5B88"/>
+          <path d="M19.9 15.2C24.1 15.6 29.8 18.8 29.2 23.4C28.7 27.1 23.4 26.8 20.5 22.9C18.2 19.9 18.5 16.9 19.9 15.2Z" fill="#3C8CE7"/>
+        </svg>
+        <span>flutterwave</span>
+      </a>
+
+      <!-- Navigation Links -->
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#enterprise">Enterprise</a></li>
+        <li><a href="#sme">SME</a></li>
+        <li><a href="#personal">Personal</a></li>
+        <li><a href="#resources">Resources</a></li>
+        <li><a href="#developers">Developers</a></li>
+        <li><a href="#company">Company</a></li>
+      </ul>
+
+      <!-- Right Action & Mobile Toggle -->
+      <div class="nav-actions">
+        <a href="#signin" class="btn-signin">Sign in</a>
+        <button class="menu-toggle" aria-label="Toggle Menu" onclick="document.getElementById('navLinks').classList.toggle('active')">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+            <line x1="3" y1="6" x2="21" y2="6"></line>
+            <line x1="3" y1="12" x2="21" y2="12"></line>
+            <line x1="3" y1="18" x2="21" y2="18"></line>
+          </svg>
+        </button>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Hero Section -->
+  <main class="container hero">
+    <div class="hero-content">
+      <h1 class="hero-title">The Payments<br>Nook</h1>
+      <p class="hero-subtitle">
+        Discover and learn everything you need to know about how payments work in Africa, and beyond.
+      </p>
+    </div>
+  </main>
+
+  <!-- Bottom Card Top Edge Preview -->
+  <div class="container bottom-peek-wrapper">
+    <div class="bottom-peek-card"></div>
+  </div>
+
+</body>
+</html>

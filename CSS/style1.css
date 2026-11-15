@@ -1,0 +1,257 @@
+/* ==========================================================================
+   Mobile & Tablet Responsive System (Max-Width: 768px Breakpoint)
+   ========================================================================== */
+@media screen and (max-width: 768px) {
+
+  /* Global Reset Helpers */
+  .head, .base {
+    height: auto !important;
+    position: relative !important;
+    flex-direction: column !important;
+    gap: 15px !important;
+    padding: 20px !important;
+    text-align: center !important;
+  }
+
+  .base {
+    bottom: 0 !important;
+  }
+
+  /* Override fixed wide layout bounds */
+  .base p, .home p, .j p, .h1 p, .m p {
+    width: 100% !important;
+    margin: 15px 0 !important;
+    padding: 0 !important;
+    font-size: 16px !important;
+    line-height: 26px !important;
+    text-align: center !important;
+  }
+
+  .base div {
+    margin-left: 0 !important;
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 10px !important;
+    width: 100% !important;
+  }
+
+  .base button {
+    margin-left: 0 !important;
+    width: 100% !important;
+  }
+
+  /* Navigation Alignment */
+  header {
+    padding: 20px !important;
+    width: 100% !important;
+  }
+
+  nav {
+    flex-direction: column !important;
+    align-items: center !important;
+    gap: 15px !important;
+  }
+
+  nav img {
+    width: 160px !important;
+  }
+
+  ul {
+    flex-direction: column !important;
+    align-items: center !important;
+    gap: 15px !important;
+    padding: 10px 0 !important;
+    width: 100% !important;
+  }
+
+  nav a {
+    width: 100% !important;
+    text-align: center !important;
+    margin: 5px 0 !important;
+  }
+
+  /* Disable Desktop Absolute Dropdowns on Mobile Viewports */
+  .drop-down, .drop-down1, .drop-down2, .drop-down3 {
+    position: static !important;
+    display: none !important; 
+    width: 100% !important;
+    box-shadow: none !important;
+  }
+
+  /* Main Hero Layout */
+  .home {
+    width: 100% !important;
+    margin: 40px 0 !important;
+    padding: 0 20px !important;
+    text-align: center !important;
+  }
+
+  .home h4 {
+    font-size: 38px !important;
+    line-height: 46px !important;
+    letter-spacing: -1px !important;
+  }
+
+  .home div {
+    width: 100% !important;
+    flex-direction: column !important;
+    gap: 12px !important;
+  }
+
+  /* Desktop Margin Overrides for Hero Graphics and General Sections */
+  .img-cont, .e, .f1, .f2, .flex, .flex1 {
+    flex-direction: column !important;
+    display: flex !important;
+    padding: 10px !important;
+    gap: 20px !important;
+    width: 100% !important;
+  }
+
+  .img-cont div, .img-cont .i2, .e1, .e2, .e img, .f1 div, .f2 div, .k1, .k2 {
+    width: 100% !important;
+    max-width: 100% !important;
+    padding: 10px 0 !important;
+    text-align: center !important;
+  }
+
+  .img-cont .i2 img, .f2 img {
+    margin-top: 0px !important;
+    width: 100% !important;
+    height: auto !important;
+  }
+
+  .po {
+    padding: 20px 0 !important;
+  }
+
+  /* Heading Resizes Across All Content Components */
+  .d h2, .f h2, .h h2, .j h2, .k h2 {
+    font-size: 28px !important;
+    line-height: 34px !important;
+    letter-spacing: -0.5px !important;
+    width: 100% !important;
+    margin-bottom: 25px !important;
+    text-align: center !important;
+  }
+
+  /* Strengths Layout Row Reset */
+  .g {
+    font-size: 26px !important;
+    line-height: 36px !important;
+    padding: 0 20px !important;
+    margin-bottom: 50px !important;
+    text-align: center !important;
+  }
+
+  /* Personal / Individual Segment Overrides (`.h`, `.h1`, `.h2`) */
+  .h {
+    padding: 60px 0 40px !important;
+  }
+
+  .h1 {
+    margin: 0 !important;
+    padding: 0 20px !important;
+  }
+
+  .h2 {
+    padding: 20px !important;
+    flex-direction: column !important;
+  }
+
+  .h2 div {
+    width: 100% !important;
+    padding: 30px 20px !important;
+    text-align: center !important;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.3) !important;
+  }
+
+  /* Developer & API Section Adjustment (`.j`) */
+  .j {
+    padding: 60px 20px !important;
+  }
+
+  .j div {
+    margin: 0 !important;
+  }
+
+  .ul {
+    padding-left: 20px !important;
+    text-align: left !important;
+    line-height: 36px !important;
+    margin-bottom: 30px !important;
+  }
+
+  /* Global Reach Dynamic Globe Image Adjustment (`.k`) */
+  .k {
+    padding: 60px 20px !important;
+  }
+
+  .k11 {
+    margin-top: 30px !important;
+  }
+
+  .k1 div h5, .k1 div p, .k11 div h5 {
+    padding: 0 10px !important;
+    text-align: center !important;
+    border: none !important; /* Strips desktop side-borders */
+  }
+
+  .k2 img {
+    width: 100% !important;
+    height: auto !important;
+    aspect-ratio: 1 / 1 !important;
+  }
+
+  /* Payment Channel Mini Lists Stack */
+  .flex1 {
+    margin: 20px 0 0 !important;
+    gap: 10px !important;
+  }
+
+  .list, .debit {
+    width: 100% !important;
+    text-style: none !important;
+    text-align: center !important;
+  }
+
+  /* Banner Callout Container Adjustment (`.m`) */
+  .m {
+    padding: 40px 10px !important;
+  }
+
+  .m div {
+    margin: 0 !important;
+    padding: 40px 20px !important;
+    text-align: center !important;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1) !important;
+  }
+
+  .m h4 {
+    font-size: 28px !important;
+    line-height: 34px !important;
+  }
+
+  .m11 {
+    margin: 0 0 20px 0 !important;
+    display: block !important;
+    width: 100% !important;
+  }
+
+  /* Saccadic Link Columns Layout Matrix Transformation (`.n`) */
+  .n {
+    flex-direction: column !important;
+    padding: 40px 20px !important;
+    gap: 30px !important;
+  }
+
+  .n ul {
+    width: 100% !important;
+  }
+
+  /* Location Bottom Bar (`.p`) */
+  .p {
+    margin: 20px 20px 40px !important;
+    padding-top: 15px !important;
+    text-align: center !important;
+  }
+}

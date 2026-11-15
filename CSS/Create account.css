@@ -1,0 +1,273 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+      background-color: #2A3362;
+}
+
+.a {
+    /* max-height: max-content; */
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    /* padding: 20px 48px; */
+    padding: 20px 5%;
+    gap: 15px;
+    justify-content: space-between;
+    background-color: #2A3362;
+}
+
+div img {
+    width: 190px;
+}
+
+.a div {
+    display: flex;
+    gap: 5px;
+    color: RGBA(255, 255, 255, 0.75);
+    font-size: 16px;
+    line-height: 18.4px;
+    font-weight: 400;
+}
+
+.a a {
+    text-decoration: none;
+    color: RGB(255, 155, 0);
+}
+
+section {
+    /* padding: 85px 48px 0px; */
+    padding: 60px 5% 0px;
+    background-color: #2A3362;
+    overflow-x: hidden;
+}
+
+section h1 {
+    color: RGB(255, 255, 255);
+    /* font-size: 48px; */
+    font-size: clamp(28px, 5vw, 48px);
+    /* line-height: 55.2px; */
+    line-height: 1.15;
+    font-weight: 400;
+    letter-spacing: -0.48px;
+}
+
+.b {
+    /* margin: 5px -45px 0px -15px; */
+    margin-top: 20px;
+    border: 2px solid #000000;
+    border-bottom: none;
+    border-right: none;
+    padding: 20px;
+    background-image: url(/Resources/decorative-wave.svg);
+    height: 463px;
+}
+
+section p {
+    color: RGBA(255, 255, 255, 0.8);
+    /* font-size: 32px; */
+    font-size: clamp(18px, 3vw, 32px);
+    /* line-height: 44px; */
+    line-height: 1.35;
+    font-weight: 300;
+    /* margin: 0px 0px 80px; */
+    margin: 10px 0px 40px;
+    /* max-width: 45%; */
+    max-width: 440px;
+}
+
+
+.b1 {
+    margin: 120px 0px 0px;
+    font-size: 12px;
+    line-height: 16px;
+    font-weight: 400;
+    color: RGBA(255, 255, 255, 0.55);
+}
+
+strong {
+    font-weight: 700;
+    color: RGBA(255, 255, 255, 0.75);
+}
+
+.b2 {
+    /* margin-top: 10px; */
+    margin-top: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    /* max-width: 40%; */
+    max-width: 500px;
+    gap: 20px;
+}
+
+.c {
+    height: 85.3vh;
+    overflow-y: auto;
+    padding: 32px;
+    background-color: white;
+    border: 1px solid grey;
+    border-radius: 10px;
+    /* width: 570px; */
+    width: 100%;
+    max-width: 570px;
+    position: absolute;
+    top: 100px;
+    /* right: 60px; */
+    right: 5%;
+    z-index: 10;
+}
+
+.c h1 {
+    color: RGB(51, 51, 51);
+    font-size: 20px;
+    line-height: 23px;
+    font-weight: 700;
+    margin: 0px 0px 8px;
+}
+
+.c1 {
+    display: block;
+    margin: 30px 0px 0px;
+    color: #333333;
+}
+.c2{
+    flex: 1;
+    margin: 20px 0px 0px;
+    color: #333333;
+}
+
+.c3 {
+    display: flex;
+    gap: 10px;
+}
+
+label {
+    margin-top: 20px;
+    padding: 0px 0px 8px;
+    color: #333333;
+}
+
+select, .email {
+    width: 500px;
+    /* height: 40px; */
+    height: 48px;
+    /* padding: 5px 0px 5px 16px; */
+    padding: 12px 16px;
+    border: 1px solid #E0E0E0;
+    border-radius: 4px;
+}
+
+.input {
+    border: none;
+    position: relative;
+    top: 30px;
+    left: -40px;
+}
+
+.box {
+    margin: 0px 0px 0px;
+    border: 2px solid #E0E0E0;
+    /* padding: 20px 0px; */
+    padding: 16px;
+    border-radius: 4px;
+}
+
+/* .email {
+    width: 100%;
+    border: 1px solid #E0E0E0;
+    padding: 15px;
+} */
+
+p {
+    font-size: 12px;
+    line-height: 15px;
+    font-weight: 400;
+    margin: 6px 0px 0px;
+    color: #888282;
+}
+
+p a {
+    text-decoration: none;
+    color: #576AE6;
+}
+
+.c2 input {
+    top: 0px;
+    left: 0px;
+    /* padding: 20px 16px 20px; */
+    padding: 15px 16px;
+    border: 1px solid #E0E0E0;
+    /* width: 240px; */
+    width: 100%;
+    border-radius: 4px;
+}
+
+.flex {
+    display: flex;
+    justify-content: space-between;
+    gap: 16px;
+}
+
+.flex1 {
+    margin: 0px 0px 0px 0px;
+}
+
+.d {
+    margin: 30px 0px 0px 0px;
+}
+
+.checkbox {
+    border: 1px solid #FF9B00;
+    border-radius: 10px;
+}
+
+button {
+    color: #2D2D2D;
+    background-color: #FFCA7D;
+    border: none;
+    border-radius: 5px;
+    font-size: 18px;
+    line-height: 22px;
+    font-weight: 500;
+    padding: 17px 32px;
+    margin: 30px 0px 0px 0px;
+    width: 100%;
+}
+
+.e {
+    display: flex;
+    justify-content: center;
+    margin: 20px 0px;
+    color: RGB(130, 130, 130);
+    gap: 5px;
+}
+
+.e p {
+    font-size: 16px;
+    line-height: 16.1px;
+    font-weight: 400;
+}
+
+.e a {
+    text-decoration: none;
+    color: #576AE6;
+    margin-top: 5px;
+}
+
+@media (max-width: 1114px) {
+    .base{
+        display: none;
+    }
+    .c{
+    position: static;
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    overflow-y: visible;
+    border-radius: 0px;
+    border-left: none;
+    border-right: none;
+    }
+}
